@@ -28,7 +28,33 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js"></script>
     <script type="text/javascript" src="dom.js"></script>
     <script type="text/javascript">
-    var time = moment().format('LT');
+    var time = moment().format('LTS');
+
+    //create function to update time every 1 second
+    setInterval(getTime, 1000);
+
+    function getTime() {
+        var time = moment().format('LTS');
+        $("#time").text(time);
+   }
+
+   //Team 6 - function for  toggling Todo 
+    var clickToggle = function(){
+       $("#todo-container").toggleClass("hide");
+   }
+
+   //Toggle visibility of Todo when Todo title is clicked
+   $("#todo-title").on("click", clickToggle);
+
+
+   //update list function to add items entered at the prompt
+   var updateList = function() {
+       var input = prompt("Add to your List!");
+       $("#todo").appendHtml("<li>" + input + "</li>");
+       console.dir("#todo");
+   }
+   //add event listener to plus button, and then call updateList function to add to list
+   $("#plus").on("click", updateList);
 
     </script>
 </body>

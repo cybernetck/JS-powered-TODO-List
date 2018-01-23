@@ -9,13 +9,7 @@ var $ = function(sel) {
 
     var elem = document.querySelectorAll(sel);
 
-    var text = function (userInput) {
-        // pass in test from user, and update text
-        elem.textContent = userInput;
-
-         }
-
-    var text2 = function (str) {
+    var text = function (str) {
 
            for (var i = 0; i < elem.length; ++i) {
             elem[i].innerText = str;
@@ -57,46 +51,44 @@ var $ = function(sel) {
         }
     }
 
-    //toggleClass - Jan 23rd
-
     //html
 
-    var html= function (htmlUpdate) {
-
-        //elem.innerHTML = "<ul>";
-
+    var html = function (htmlUpdate) {
         for (var i = 0; i < elem.length; ++i) {
-            elem.innerHTML = htmlUpdate;
+            elem[i].innerHTML = htmlUpdate;
         }
-       // elem.innerHTML += "<ul>";
     }
 
-    var toggleClass = function (className) 
-    {
-        console.log("toggleClass called.");
+    var appendHtml = function (htmlUpdate) {
+        for (var i = 0; i < elem.length; ++i) {
+            elem[i].innerHTML += htmlUpdate;
+        }
+    }
     
-        for (var i = 0; i < elem.length; i++) 
-        {
+    var toggleClass = function (className)  {
+
+        console.log("toggleClass called.");
+        console.dir(elem);
+        for (var i = 0; i < elem.length; i++)  {
             if (elem[i].className.includes(className))  
                 {
-                    removeClass(className);
+                    elem[i].classList.remove(className);
                 }
             else 
                 {
-                    addClass(className);
-
+                    elem[i].classList.add(className);
                 }
-        }
+                                                }
     }
 
     publicAPI = {
            element: elem,
               text: text,
-             text2: text2,
           addClass: addClass,
        removeClass: removeClass,
                 on: on,
               html:html,
+        appendHtml:appendHtml,
     toggleClass:toggleClass
     }
 
