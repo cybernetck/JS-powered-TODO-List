@@ -1,0 +1,56 @@
+/* Tag Styling */
+body{
+	background: url("milky-way.jpg");
+	color: white;
+}
+
+h1{
+	font-size: 100px;
+}
+
+li{
+	padding-bottom: 5px;
+}
+
+
+/* ID styling */
+
+#time{
+	padding: 300px 0;
+}
+
+#todo-title{
+	cursor: pointer;
+}
+
+#todo-container{
+	padding: 10px 30px;
+	background: white;
+	border: 1px solid grey;
+	border-radius: 3px;
+	color: navy;
+	background: white;
+	position: absolute;
+	top: 60px;
+	left: 40px;
+}
+
+#todo{
+	list-style: none;
+	padding: 0;
+}
+
+#plus{
+	font-weight: bold;
+	cursor: pointer;
+}
+
+/* Toggle Classes */
+
+.hide{
+	visibility: hidden;
+}
+
+.strike {
+	text-decoration: line-through;
+}
