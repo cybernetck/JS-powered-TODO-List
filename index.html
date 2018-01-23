@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <h2 id="todo-title">Todo</h2>
+                <div id="todo-container" class="hide">
+                    <ul id="todo">
+                    </ul>
+                    <p id="plus">+</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <h1 id="time"></h1>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js"></script>
+    <script type="text/javascript" src="dom.js"></script>
+    <script type="text/javascript">
+    var time = moment().format('LT');
+
+    </script>
+</body>
+
+</html>
